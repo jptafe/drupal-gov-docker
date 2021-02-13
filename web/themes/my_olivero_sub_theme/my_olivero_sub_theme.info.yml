@@ -1,0 +1,9 @@
+name: my_olivero_sub_theme
+type: theme
+base theme: olivero
+description: A flexible theme with a responsive, mobile-first layout.
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9
+libraries:
+  - my_olivero_sub_theme/global

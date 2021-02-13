@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the my_olivero_sub_theme theme.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for html.html.twig.
+ */
+function my_olivero_sub_theme_preprocess_html(&$variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for page.html.twig.
+ */
+function my_olivero_sub_theme_preprocess_page(&$variables) {
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+function my_olivero_sub_theme_preprocess_node(&$variables) {
+
+}
