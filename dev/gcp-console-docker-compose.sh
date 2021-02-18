@@ -1,0 +1,2 @@
+CLOUDSDK_PYTHON=python3
+LD_LIBRARY_PATH=/usr/local/lib
