@@ -1,0 +1,41 @@
+version: '3.1'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: gov_database 
+    restart: always
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d/
+    environment:
+      MYSQL_DATABASE: "${DB}"
+      MYSQL_USER: "${DBU}"
+      MYSQL_PASSWORD: "${DBP}"
+      MYSQL_RANDOM_ROOT_PASSWORD: "1"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: gov_db_admin 
+    restart: always
+    environment:
+      PMA_HOST: "${DBH}"
+      PMA_USER: "${DBU}"
+      PMA_PASSWORD: "${DBP}"
+      PMA_ARBITRARY: "1"
+    ports:
+      - 9999:80
+  drupal:
+    #image: drupal:9-php7.4-apache
+    build: .
+    container_name: gov_interface
+    restart: always
+    ports:
+      - 9998:80
+    working_dir: /opt
+    volumes:
+      - .:/opt:z
+    environment:
+      HOST: "${DBH}"
+      DBASE: "${DB}"
+      USER: "${DBU}"
+      PASS: "${DBP}"
+    command: bash -c "composer update && rm /var/www/html && ln -s /opt/web /var/www/html && /usr/local/bin/apache2-foreground"

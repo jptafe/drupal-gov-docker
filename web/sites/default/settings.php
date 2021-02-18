@@ -770,12 +770,13 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 # if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
+
 $databases['default']['default'] = array (
-  'database' => 'drupal_govt_policy',
-  'username' => 'dgp',
-  'password' => 'drupgovpol',
+  'database' => $_ENV['DBASE'],
+  'username' => $_ENV['USER'],
+  'password' => $_ENV['PASS'],
   'prefix' => '',
-  'host' => '127.0.0.1',
+  'host' => $_ENV['HOST'],
   'port' => '3306',
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
   'driver' => 'mysql',
