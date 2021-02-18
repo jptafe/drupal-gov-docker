@@ -17,10 +17,12 @@
     "require": {
         "composer/installers": "^1.9",
         "drupal/admin_toolbar": "^3.0",
+        "drupal/auto_entitylabel": "^3.0@beta",
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-project-message": "^9",
         "drupal/core-recommended": "^9",
         "drupal/taxonomy_menu": "^3.4",
+        "drupal/token": "^1.9",
         "drush/config-extra": "^1.0",
         "drush/drush": "^10.3"
     },
